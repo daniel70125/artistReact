@@ -1,0 +1,21 @@
+#container {
+    min-height:94vh;
+    background-image: url('https://images4.alphacoders.com/936/thumb-1920-936378.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    color:white;
+    font-size: 32px;
+}
+@media only screen and (min-width: 600px) {
+    #container {
+        min-height: 100vh;
+        margin-left:6vw;
+    }
+}
