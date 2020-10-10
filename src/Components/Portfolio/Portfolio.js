@@ -7,7 +7,9 @@ class Portfolio extends Component {
     }
     render() { 
         return ( 
-            <div>Portfolio.js</div>
+            <div>
+                
+            </div>
          );
     }
 }

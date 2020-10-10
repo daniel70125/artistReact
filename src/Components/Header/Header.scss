@@ -15,24 +15,22 @@ header {
 #icon-cont {
     width:10%;
     font-size: 30px;
-}
-#icon-cont {
     a {
         color:white;
     }
 }
+
 #nav-links {
-    width:80%;
+    width:100%;
     display: flex;
     justify-content: space-evenly;
     font-size: 25px;
-}
-#nav-links {
     a {
         display: none;
         color:white;
     }
 }
+
 #mobile-menu {
     width:10%;
     font-size:30px;
@@ -67,12 +65,31 @@ color:white;
 #nav-links > a:hover {
     color:black;
 }
+#social-icons {
+    display: none ;
+}
 @media only screen and (min-width: 600px) {
+    #social-icons {
+        display: flex;
+        position: absolute;
+        color:white;
+        font-size: 30px;
+        flex-direction: column;
+        bottom:35px;
+        a {
+            color:white;
+            margin-top:5px;
+        }
+        a:hover {
+            color:black;
+        }
+    }
     header {
         position: fixed;
         top:0;
         left:0;
         width:6vw;
+        height: 100vh;
     }
     #ex {
         flex-direction: column;
@@ -85,13 +102,9 @@ color:white;
     #nav-links {
         flex-direction: column;
         height: 40%;
-    }
-    #nav-links {
         a {
             display: block;
         }
-    }
-    #nav-links {
         span {
             font-size:18px;
             // position: relative;

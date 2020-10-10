@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faHome, faShoppingCart, faAddressCard, faBars, faTimes, faShoppingBag} from '@fortawesome/free-solid-svg-icons'
+import {  faLinkedin, faTwitter  } from '@fortawesome/free-brands-svg-icons';
 import {Link} from 'react-router-dom';
 import './Header.scss';
 
@@ -24,6 +25,7 @@ class Header extends Component {
                 <div id='nav-links'>
                     <Link to='/'>
                         <FontAwesomeIcon icon={faHome} />
+                        
                     </Link>
                     <Link to='/items/'>
                         <FontAwesomeIcon icon={faShoppingBag} />
@@ -37,6 +39,14 @@ class Header extends Component {
                 </div>
                 <div id='mobile-menu'>
                     <FontAwesomeIcon onClick={() => this.setState({mobileOpen: !this.state.mobileOpen}) } icon={this.state.mobileOpen ? faTimes : faBars} />
+                </div>
+                <div id='social-icons'>
+                    <Link to='#'>
+                        <FontAwesomeIcon icon={faTwitter} />
+                    </Link>
+                    <Link to='#'>
+                        <FontAwesomeIcon icon={faLinkedin} />
+                    </Link>
                 </div>
 
                 </div>
