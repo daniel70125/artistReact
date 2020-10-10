@@ -1,0 +1,42 @@
+#portfolio-cont {
+    min-height: 100vh;
+}
+#portfolio-header {
+    height:30vh;
+    color:white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://images.hdqwalls.com/wallpapers/up-movie-digital-art-yn.jpg');
+}
+#portfolio-nav {
+    align-items: center;
+    height: 20vh;
+    background: antiquewhite;
+    display: flex;
+    justify-content: space-evenly;
+    span:hover {
+        cursor: pointer;
+        color: black;
+        text-decoration: underline;
+    }
+}
+
+#header-text {
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    h2 {
+        position: relative;
+        top:40px;
+    }
+    nav {
+        position: relative;
+        top:40px;
+    }
+}
+.MuiBreadcrumbs-ol {
+    color:white;
+}
