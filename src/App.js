@@ -13,7 +13,7 @@ class App extends Component {
   }
   async componentDidMount(){
     axios.get('/session')
-    .then(res => console.log(res))
+    .then(res => console.log(res.data))
     .catch(err => console.log(err)
     )}
   render(){

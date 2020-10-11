@@ -20,7 +20,27 @@ app.use(session({
 }));
 
 
-// app.get('/', (req, res) => res.status(200).send("We're In !"));
+app.get('/session', (req, res) => {
+    req.session.user = {}
+    res.status(200).send(req.session)
+});
+app.get('/items', (req, res) => {
+    let obj = [
+        {
+            name: "Daniel",
+            img: "https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+        },
+        {
+            name: "thomas",
+            img: "https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+        },
+        {
+            name: "Stacy",
+            img: "https://images.wallpapersden.com/image/download/small-memory_58461_3840x2160.jpg"
+        }
+    ]
+    res.status(200).send(obj)
+})
 massive({
     connectionString: CONNECTION_STRING,
     ssl: {rejectUnauthorized: false}

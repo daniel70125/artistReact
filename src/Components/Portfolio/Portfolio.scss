@@ -31,12 +31,57 @@
     h2 {
         position: relative;
         top:40px;
+        font-size:32px;
     }
     nav {
         position: relative;
         top:40px;
     }
 }
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+      }
+  }
+  .tablinks:hover {
+    background-color: #ddd;
+  }
+  .tablinks.active {
+    background-color: #ccc;
+  }
 .MuiBreadcrumbs-ol {
     color:white;
+    font-size: 18px;
+}
+#item-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    a {
+        width:90%;
+        margin:15px auto 0 auto;
+        height: 28vh;
+        background-color: grey;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #portfolio-cont {
+        margin-left:6vw;
+    }
+    #item-cont {
+        flex-direction: row;
+        a {
+            width: 30%;
+        }
+    }
 }
