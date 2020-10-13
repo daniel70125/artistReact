@@ -23,9 +23,8 @@ class Post extends Component {
     async componentDidMount(){
         const {pathname} = this.props.location
         await this.props.getArt(pathname);
-        const art = this.props.art.data[0];
      this.setState({
-         art: art
+         art: this.props.art
      })
      }
     render() { 
@@ -42,16 +41,16 @@ class Post extends Component {
                     Portfolio
                 </Link>
                 <Link style={{"textDecoration":"underline"}} color="textPrimary" to="/portfolio/" aria-current="page">
-                    {this.state.art.title}
+                    {this.props.art.data[0].title}
                 </Link>
               </Breadcrumbs>
                 <div id='post-img'>
-                    <img src={this.state.art.img} alt={this.state.art.title}/>
+                    <img src={this.props.art.data[0].img} alt={this.props.art.data[0].title}/>
                 </div>
                 <div>
-                    <span>Title:</span><p>{this.state.art.title}</p>
-                    <span>Category:</span><p>{this.state.art.category}</p>
-                    <span>Description:</span><p>{this.state.art.description}</p>
+                    <span>Title:</span><p>{this.props.art.data[0].title}</p>
+                    <span>Category:</span><p>{this.props.art.data[0].category}</p>
+                    <span>Description:</span><p>{this.props.art.data[0].description}</p>
                 </div>
             </div>
          );
