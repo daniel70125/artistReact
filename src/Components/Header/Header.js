@@ -27,7 +27,7 @@ class Header extends Component {
                         <FontAwesomeIcon icon={faHome} />
                         
                     </Link>
-                    <Link to='/items/'>
+                    <Link to='/portfolio/'>
                         <FontAwesomeIcon icon={faShoppingBag} />
                     </Link>
                     <Link to='/cart/'>
@@ -54,7 +54,7 @@ class Header extends Component {
                     <Link to='/'>
                         <FontAwesomeIcon icon={faHome} />
                     </Link>
-                    <Link to='/items/'>
+                    <Link to='/portfolio/'>
                         <FontAwesomeIcon icon={faShoppingBag} />
                     </Link>
                     <Link to='/cart/'>

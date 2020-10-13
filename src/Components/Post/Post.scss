@@ -1,0 +1,27 @@
+#post-cont {
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    nav {
+        background-color: grey;
+        padding:5px;
+        height:10vh;
+        ol {
+            margin-left:70px;
+            margin-top: 3vh;
+        }
+    }
+}
+#post-img {
+    width:100%;
+    img {
+        width:100%;
+    }
+}
+.MuiBreadcrumbs-separator {
+    color:black;
+}
+.Breadcrumbs {
+    
+
+}

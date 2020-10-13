@@ -39,6 +39,14 @@ app.get('/items/portraits', async (req, res) => {
     const portraits = await db.getPortraits();
     res.status(200).send(portraits)
 })
+app.get('/item/:id', async (req, res) => {
+    const {id} = req.params;
+
+    const db = req.app.get('db');
+    const art = await db.getDrawing(id);
+    res.status(200).send(art);
+    
+})
 massive({
     connectionString: CONNECTION_STRING,
     ssl: {rejectUnauthorized: false}

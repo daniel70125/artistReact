@@ -63,7 +63,7 @@ class Portfolio extends Component {
     const item = this.state.items.map((elm, index) => {
       return (
             
-            <Link className={`linksSR${index}`} to={`/item/${index}`}>
+            <Link className={`linksSR${index}`} to={`/item/${elm.id}`}>
               <Item key={index} id={index} elm={elm} />
               <div id='modal'>
                 <h2>{elm.title}</h2>
