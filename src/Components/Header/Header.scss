@@ -5,6 +5,7 @@ header {
     background-color: $header-bg;
     position: sticky;
     top:0px;
+    z-index: 5;
     // color:pink;
 }
 #ex {

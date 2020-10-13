@@ -1,0 +1,1 @@
+select * from paulsart where category = 'Drawing';

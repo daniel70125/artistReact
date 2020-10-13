@@ -24,22 +24,20 @@ app.get('/session', (req, res) => {
     req.session.user = {}
     res.status(200).send(req.session)
 });
-app.get('/items', (req, res) => {
-    let obj = [
-        {
-            name: "Daniel",
-            img: "https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-        },
-        {
-            name: "thomas",
-            img: "https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-        },
-        {
-            name: "Stacy",
-            img: "https://images.wallpapersden.com/image/download/small-memory_58461_3840x2160.jpg"
-        }
-    ]
-    res.status(200).send(obj)
+app.get('/items', async (req, res) => {
+    const db = req.app.get('db');
+    const allArt = await db.getAllArt();
+    res.status(200).send(allArt)
+})
+app.get('/items/drawings', async (req, res) => {
+    const db = req.app.get('db');
+    const drawings = await db.getDrawings();
+    res.status(200).send(drawings)
+})
+app.get('/items/portraits', async (req, res) => {
+    const db = req.app.get('db');
+    const portraits = await db.getPortraits();
+    res.status(200).send(portraits)
 })
 massive({
     connectionString: CONNECTION_STRING,

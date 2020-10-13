@@ -4,6 +4,8 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import {Link} from 'react-router-dom';
 import './Portfolio.scss';
 import Item from '../Item/Item';
+// import Fade from '@material-ui/core/Fade';
+import ScrollReveal from 'scrollreveal'
 
 // import Button from '@material-ui/core/Button';
 import axios from 'axios';
@@ -14,19 +16,59 @@ class Portfolio extends Component {
     this.state = { 
       items: []
      }
+     this.getDrawings = this.getDrawings.bind(this);
+     this.getAllArt = this.getAllArt.bind(this);
+     this.getPortraits = this.getPortraits.bind(this);
   }
   async componentDidMount(){
     await axios.get('/items')
-    .then(res => this.setState({
+    .then(res => {
+      this.setState({
         items: res.data
-    }))
+    })
+    console.log(res.data)
+    })
     .catch(err => console.log(err));
+    let start = 0;
+    for (let index = 0; index < this.state.items.length; index++) {
+      console.log(start);
+      ScrollReveal().reveal(`.linksSR${index}`, {delay: start});
+      start = start + 500;
+      // const elm = this.state.items[index];
+      // console.log(elm);
+    }
+  }
+  async getDrawings(){
+    await axios.get('/items/drawings').then(res => {
+      this.setState({
+        items: res.data
+      })
+    })
+  }
+  async getAllArt(){
+    await axios.get('/items').then(res => {
+      this.setState({
+        items: res.data
+      })
+    })
+  }
+  async getPortraits(){
+    await axios.get('/items/portraits').then(res => {
+      this.setState({
+        items: res.data
+      })
+    })
   }
   render() { 
     const item = this.state.items.map((elm, index) => {
       return (
-            <Link to={`/item/${index}`}>
-              <Item id={index} elm={elm} />
+            
+            <Link className={`linksSR${index}`} to={`/item/${index}`}>
+              <Item key={index} id={index} elm={elm} />
+              <div id='modal'>
+                <h2>{elm.title}</h2>
+                <span>{elm.description}</span>
+              </div>
             </Link>
       )
     })
@@ -36,19 +78,19 @@ class Portfolio extends Component {
           <div id='header-text'>
               <h2>Grid Gallery</h2>
               <Breadcrumbs aria-label="breadcrumb">
-                <Link color="inherit" to="/">
+                <Link style={{"color":"white"}} to="/">
                     Home
                 </Link>
-                <Link style={{"textDecoration":"underline"}} color="textPrimary" to="/components/breadcrumbs/" aria-current="page">
-                Portfolio
+                <Link style={{"textDecoration":"underline"}} color="textPrimary" to="/portfolio/" aria-current="page">
+                    Portfolio
                 </Link>
               </Breadcrumbs>
           </div>
           </div>
           <div className="tab">
-            <button className="tablinks">All</button>
-            <button className="tablinks">Potraits</button>
-            <button className="tablinks">Drawings</button>
+            <button onClick={this.getAllArt} className="tablinks">All</button>
+            <button onClick={this.getPortraits} className="tablinks">Potraits</button>
+            <button onClick={this.getDrawings} className="tablinks">Drawings</button>
           </div>
           <div id='item-cont'>
             {item}

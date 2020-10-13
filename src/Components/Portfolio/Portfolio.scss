@@ -62,18 +62,43 @@
     color:white;
     font-size: 18px;
 }
+#modal {
+    color:white;
+    position: absolute;
+    top: 0;
+    padding-top:15%;
+    width: 100%;
+    height: 100%;
+    display: none;
+    h2 {
+        text-decoration: underline;
+    }
+}
 #item-cont {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    flex-wrap: wrap;
     a {
         width:90%;
-        margin:15px auto 0 auto;
+        position: relative;
+        margin: 10px auto 10px auto;
         height: 28vh;
         background-color: grey;
+        box-shadow: 0px 0px 7px 2px grey;
     }
 }
-
+#item-cont {
+    a:hover > div + #modal {
+        display: block;
+        opacity:1;
+    }
+}
+#item-cont {
+    a:hover > div {
+        opacity: 0.2;
+    }
+}
 @media only screen and (min-width: 600px) {
     #portfolio-cont {
         margin-left:6vw;
