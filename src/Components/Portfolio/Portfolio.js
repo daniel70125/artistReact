@@ -33,7 +33,7 @@ class Portfolio extends Component {
     for (let index = 0; index < this.state.items.length; index++) {
       console.log(start);
       ScrollReveal().reveal(`.linksSR${index}`, {delay: start});
-      start = start + 500;
+      start = start + 300;
       // const elm = this.state.items[index];
       // console.log(elm);
     }
@@ -81,7 +81,7 @@ class Portfolio extends Component {
                 <Link style={{"color":"white"}} to="/">
                     Home
                 </Link>
-                <Link style={{"textDecoration":"underline"}} color="textPrimary" to="/portfolio/" aria-current="page">
+                <Link style={{"textDecoration":"underline", "color":"cornflowerblue", "fontWeight":"900"}} to="/portfolio/" aria-current="page">
                     Portfolio
                 </Link>
               </Breadcrumbs>
