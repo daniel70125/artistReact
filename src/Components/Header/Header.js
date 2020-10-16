@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, faHome, faShoppingCart, faAddressCard, faBars, faTimes, faPortrait} from '@fortawesome/free-solid-svg-icons'
+import { faCoffee, faHome, faEnvelope, faAddressCard, faBars, faTimes, faPortrait} from '@fortawesome/free-solid-svg-icons'
 import {  faLinkedin, faTwitter  } from '@fortawesome/free-brands-svg-icons';
 import {Link} from 'react-router-dom';
 import './Header.scss';
@@ -11,6 +11,12 @@ class Header extends Component {
         this.state = { 
             mobileOpen: false
          }
+    this.close = this.close.bind(this);
+    }
+    close(){
+        this.setState({
+            mobileOpen: false
+        })
     }
     render() { 
         return ( 
@@ -30,11 +36,11 @@ class Header extends Component {
                     <Link to='/portfolio/'>
                         <FontAwesomeIcon icon={faPortrait} />
                     </Link>
-                    <Link to='/cart/'>
-                        <FontAwesomeIcon icon={faShoppingCart} />
+                    <Link to='/about/'>
+                        <FontAwesomeIcon icon={faAddressCard} />
                     </Link>
                     <Link to='/contact/'>
-                        <FontAwesomeIcon icon={faAddressCard} />
+                        <FontAwesomeIcon icon={faEnvelope} />
                     </Link>
                 </div>
                 <div id='mobile-menu'>
@@ -51,17 +57,17 @@ class Header extends Component {
 
                 </div>
                 <div id={this.state.mobileOpen ? 'nav-links-2-open':'nav-links-2-closed'}>
-                    <Link to='/'>
+                    <Link to='/' onClick={this.close}>
                         <FontAwesomeIcon icon={faHome} />
                     </Link>
-                    <Link to='/portfolio/'>
+                    <Link to='/portfolio/' onClick={this.close}>
                         <FontAwesomeIcon icon={faPortrait} />
                     </Link>
-                    <Link to='/cart/'>
-                        <FontAwesomeIcon icon={faShoppingCart} />
-                    </Link>
-                    <Link to='/contact/'>
+                    <Link to='/about/' onClick={this.close}>
                         <FontAwesomeIcon icon={faAddressCard} />
+                    </Link>
+                    <Link to='/contact/' onClick={this.close}>
+                        <FontAwesomeIcon icon={faEnvelope} />
                     </Link>
                 </div>
             </header>

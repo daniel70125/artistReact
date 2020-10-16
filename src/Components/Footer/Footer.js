@@ -9,8 +9,8 @@ class Footer extends Component {
     render() { 
         return ( 
             <footer>
-                <p>Author: Paul Wright</p>
-                <p>Email: <a href="mailto:hege@example.com">paulwright@gmail.com</a></p>
+                <p>Author: John Doe</p>
+                <p>Email: <a href="mailto:hege@example.com">johndoe@gmail.com</a></p>
             </footer>
          );
     }
