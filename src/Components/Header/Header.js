@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, faHome, faEnvelope, faAddressCard, faBars, faTimes, faPortrait} from '@fortawesome/free-solid-svg-icons'
+import { faPaintBrush, faHome, faEnvelope, faAddressCard, faBars, faTimes, faPortrait} from '@fortawesome/free-solid-svg-icons'
 import {  faLinkedin, faTwitter  } from '@fortawesome/free-brands-svg-icons';
 import {Link} from 'react-router-dom';
 import './Header.scss';
@@ -25,7 +25,7 @@ class Header extends Component {
 
                 <div id='icon-cont'>
                     <Link to='/'>
-                        <FontAwesomeIcon icon={faCoffee} />
+                        <FontAwesomeIcon icon={faPaintBrush} />
                     </Link>
                 </div>
                 <div id='nav-links'>
