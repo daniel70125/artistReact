@@ -24,21 +24,30 @@ class Post extends Component {
                 title: 'null'
             }]
          }
+         this.handleClick = this.handleClick.bind(this);
     }
     async componentDidMount(){
         const {pathname} = this.props.location
         await this.props.getArt(pathname);
      this.setState({
-         art: this.props.art
+         art: this.props.art.data[0]
      })
      }
-    async handleClick(event) {
+     async handleClick(event){
         const stripe = await stripePromise;
-        const sessionID = await axios.post('/create-session', {name: "Daniel"})
-        console.log(sessionID.data.id);
+        const {title, price, img} = this.state.art
+        const response = await fetch("/create-session", {
+          method: "POST",
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({title, price, img})
+        });
+        const session = await response.json();
         // When the customer clicks on the button, redirect them to Checkout.
         const result = await stripe.redirectToCheckout({
-          sessionId: sessionID.data.id,
+          sessionId: session.id,
         });
         if (result.error) {
           // If `redirectToCheckout` fails due to a browser or network
@@ -47,7 +56,7 @@ class Post extends Component {
         }
       };
     render() { 
-        // console.log(this.state.art[0])
+        // console.log(this.state.art.title)
         return ( 
             this.props.art.length === 0 ?  <Loading /> 
             :
@@ -66,7 +75,7 @@ class Post extends Component {
               <div class="card">
                 <img src={this.props.art.data[0].img} alt={this.props.art.data[0].title} style={{"width":"100%"}} />
                 <h1>{this.props.art.data[0].title}</h1>
-                <p className="price">$19.99</p>
+                <p className="price">${this.props.art.data[0].price}.00</p>
                 <p>{this.props.art.data[0].description}</p>
                 <p>
                     <button id="checkout-button" role="link" variant="contained" onClick={this.handleClick}>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-// import Link from '@material-ui/core/Link';
+import ScrollUpButton from 'react-scroll-up-button';
 import {Link} from 'react-router-dom';
 import './Portfolio.scss';
 import Item from '../Item/Item';
@@ -34,8 +34,6 @@ class Portfolio extends Component {
       console.log(start);
       ScrollReveal().reveal(`.linksSR${index}`, {delay: start});
       start = start + 300;
-      // const elm = this.state.items[index];
-      // console.log(elm);
     }
   }
   async getDrawings(){
@@ -74,6 +72,9 @@ class Portfolio extends Component {
     })
     return ( 
       <div id='portfolio-cont'>
+        <div>
+          <ScrollUpButton style={{"backgroundColor":"#09091c"}}/>
+        </div>
         <div id='portfolio-header'>
           <div id='header-text'>
               <h2>Grid Gallery</h2>

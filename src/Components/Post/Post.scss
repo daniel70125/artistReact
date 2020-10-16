@@ -6,7 +6,7 @@
         padding:5px;
         height:10vh;
         ol {
-            margin-left:70px;
+            margin-left:22vw;
             margin-top: 3vh;
         }
     }
@@ -59,3 +59,13 @@
           width:30%;
       }
   }
+@media only screen and (min-width: 600px) {
+    #post-cont {
+        nav {
+            ol {
+                
+                margin-left: 38vw;
+            }
+        }
+    }    
+}

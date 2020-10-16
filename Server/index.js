@@ -23,10 +23,11 @@ app.use(session({
     cookie: {maxAge: 1000 * 60 * 60 * 24}
 }));
 
-const YOUR_DOMAIN = 'http://localhost:3000/checkout';
-
+const YOUR_DOMAIN = 'http://localhost:3000/#/success/'; // localhost domain
+// const YOUR_DOMAIN = 'http://localhost:3000/#/portfolio/'; // production domain
 app.post('/create-session', async (req, res) => {
-    const {name} = req.body;
+    const {price, title, img} = req.body;
+    const newPrice = +price * 100
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     line_items: [
@@ -34,16 +35,16 @@ app.post('/create-session', async (req, res) => {
         price_data: {
           currency: 'usd',
           product_data: {
-            name: name,
-            images: ['https://i.imgur.com/EHyR2nP.png'],
+            name: title,
+            images: [img],
           },
-          unit_amount: 2000,
+          unit_amount: newPrice,
         },
         quantity: 1,
       },
     ],
     mode: 'payment',
-    success_url: `${YOUR_DOMAIN}?success=true`,
+    success_url: `${YOUR_DOMAIN}`,
     cancel_url: `${YOUR_DOMAIN}?canceled=true`,
   });
   res.json({ id: session.id });
