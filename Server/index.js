@@ -43,7 +43,7 @@ app.post('/create-session', async (req, res) => {
       },
     ],
     mode: 'payment',
-    success_url: `${YOUR_DOMAIN}sucess/`,
+    success_url: `${YOUR_DOMAIN}success/`,
     cancel_url: `${YOUR_DOMAIN}portfolio/`,
   });
   res.json({ id: session.id });
