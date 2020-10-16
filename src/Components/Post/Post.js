@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Footer from '../Footer/Footer';
 // import Button from '@material-ui/core/Button';
 import './Post.scss';
