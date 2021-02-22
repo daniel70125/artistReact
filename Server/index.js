@@ -23,7 +23,8 @@ app.use(session({
     cookie: {maxAge: 1000 * 60 * 60 * 24}
 }));
 
- const YOUR_DOMAIN = 'http://104.131.29.110:4003/#/'; // production domain
+ // const YOUR_DOMAIN = 'http://104.131.29.110:4003/#/'; // production domain
+ const YOUR_DOMAIN = 'http://localhost:3000/#/';
 app.post('/create-session', async (req, res) => {
     const {price, title, img} = req.body;
     const newPrice = +price * 100

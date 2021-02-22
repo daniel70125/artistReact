@@ -82,7 +82,7 @@ class Portfolio extends Component {
                 <Link style={{"color":"white"}} to="/">
                     Home
                 </Link>
-                <Link style={{"textDecoration":"underline", "color":"cornflowerblue", "fontWeight":"900"}} to="/portfolio/" aria-current="page">
+                <Link style={{"textDecoration":"underline", "color":"black", "fontWeight":"900"}} to="/portfolio/" aria-current="page">
                     Portfolio
                 </Link>
               </Breadcrumbs>

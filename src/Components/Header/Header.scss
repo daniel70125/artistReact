@@ -25,7 +25,7 @@ header {
     width:100%;
     display: flex;
     justify-content: space-evenly;
-    font-size: 25px;
+    font-size: 32px;
     a {
         display: none;
         color:white;
@@ -64,7 +64,7 @@ color:white;
 color:white;
 }
 #nav-links > a:hover {
-    color:black;
+    color:grey;
 }
 #social-icons {
     display: none ;
@@ -107,7 +107,7 @@ color:white;
             display: block;
         }
         span {
-            font-size:18px;
+            font-size:22px;
             // position: relative;
             // left:-10px;
         }
