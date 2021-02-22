@@ -1,10 +1,15 @@
 #post-cont {
     width:100vw;
     display: flex;
+    height:100vh;
     flex-direction: column;
+    .MuiBreadcrumbs-separator {
+        color:white;
+    }
     nav {
         padding:5px;
         height:10vh;
+        background-color: #09091c;
         ol {
             margin-left:22vw;
             margin-top: 3vh;
@@ -26,7 +31,7 @@
 }
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 330px;
+    max-width: 400px;
     margin: auto;
     text-align: center;
     font-family: arial;

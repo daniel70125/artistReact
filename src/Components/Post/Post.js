@@ -61,13 +61,13 @@ class Post extends Component {
             :
             <div id='post-cont'>
               <Breadcrumbs className='Breadcrumbs' aria-label="breadcrumb">
-                <Link style={{"color":"black"}} to="/">
+                <Link style={{"color":"white"}} to="/">
                     Home
                 </Link>
-                <Link style={{"color":"black"}} to="/portfolio/">
+                <Link style={{"color":"white"}} to="/portfolio/">
                     Portfolio
                 </Link>
-                <Link style={{"textDecoration":"underline"}} color="textPrimary" to="/portfolio/" aria-current="page">
+                <Link style={{"textDecoration":"underline"}} style={{"color":"cadetblue", "fontSize":"24px", "textDecoration":"none"}} to="/portfolio/" aria-current="page">
                     {this.props.art.data[0].title}
                 </Link>
               </Breadcrumbs>
